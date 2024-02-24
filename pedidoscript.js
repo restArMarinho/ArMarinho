@@ -22,6 +22,8 @@ function voltarParaIndex(){
 
 function pedido(){
     
+    document.documentElement.scrollTop = 0;
+    
     fazerPedido(AbrirJanela,"resumo", "conteiner");
     calculaValorTotal();
 
