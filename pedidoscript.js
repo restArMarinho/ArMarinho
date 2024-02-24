@@ -332,20 +332,20 @@ function fazerPedido(func, f1, f2) {
 function verificarValoresIguais(variavel1, variavel2, variavel3, variavel4, variavel5) {
 
   
-     if (variavel1 ==="FRUTO DO MAR: zero" && variavel2 === "PESCADO: zero"&& variavel3 ==="ARROZ: zero" && variavel4 === "MASSAS: zero" && variavel5 ==="SALADAS: zero") {
-        alert("Escolha pelo menos duas opções");
+     if (variavel1 ==="MARISCO: zero" && variavel2 === "PEIXE: zero"&& variavel3 ==="ARROZ: zero" && variavel4 === "MASSAS: zero" && variavel5 ==="SALADAS: zero") {
+        alert("Adicione pelo menos uma opção");
         return false
        
     } 
-    else if (variavel1 ==="FRUTO DO MAR: zero" && variavel2 === "PESCADO: zero"){
-        alert("Escolha pelo menos um fruto do mar (MARISCO OU PEIXE).");
+    /*else if (variavel1 ==="MARISCO: zero" && variavel2 === "PEIXE: zero"){
+        alert("Escolha pelo menos uma porção de fruto do mar (MARISCO OU PEIXE).");
         return false
         
-    }
-    else if((variavel3 ==="ARROZ: zero" && variavel4 === "MASSAS: zero" && variavel5 ==="SALADAS: zero")&&(variavel1 ==="FRUTOS DO MAR: zero" || variavel2 == "PESCADO: zero")){
-        alert("Escolha pelo menos um acompanhamento");
+    }*/
+    /*else if((variavel3 ==="ARROZ: zero" && variavel4 === "MASSAS: zero" && variavel5 ==="SALADAS: zero")&&(variavel1 ==="MARISCO: zero" || variavel2 == "PEIXE: zero")){
+        alert("Adicione pelo menos outra porção de fruto do mar (MARISCO OU PEIXE) ou um acompanhamento");
     return false;
-    } 
+    } */
     else {
     
     return true;
@@ -394,7 +394,9 @@ function calculaValorTotal(){
         // Para cada checkbox marcado acima de 2, adiciona 5 ao valortotal
         valortotal = 25 + (checkedboxes.length - 2) * 5;
     }
-    else{
+    else if (checkedboxes.length === 0 && quantidadeSelectsX2 === 0){
+        valortotal = 0;
+    } else{
         valortotal = 25;
     }
     
