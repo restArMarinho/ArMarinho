@@ -1,14 +1,14 @@
-let formaDePagamento = "";
-let formaDeEntrega = ""; 
+var formaDePagamento = "";
+var formaDeEntrega = ""; 
 var frutosDoMaroutput = "";
 var pescadooutput = "";
 var arrozoutput = "";
 var massasoutput = "";
 var saladaoutput = "";
-var valortotal = 25;
-let Aux = 0;
-let Aux2 = 0;
-let counter = 0;
+var valortotal = 0;
+var Aux = 0;
+var Aux2 = 0;
+var counter = 0;
 var frutosdomarPorcoes = [];
 var opcoes = document.getElementsByName("formadeentrega");
 /****************************************Navegação*******************************************************************************/
@@ -19,11 +19,7 @@ function voltarParaIndex(){
     window.location.href = 'index.html';
 
 }
-function voltaParaPedido(){
-    window.location.href = 'pedido.html'
-    
 
-}
 function pedido(){
     
     fazerPedido(AbrirJanela,"resumo", "conteiner");
@@ -78,12 +74,14 @@ function limitarSelecoes(checkbox) {
         uncheckedCheckboxes.forEach(function(uncheckedCheckbox) {
             uncheckedCheckbox.disabled = false;
         });
+        if(checkboxes.length > 0){
         // Habilita o select correspondente ao checkbox marcado
         var lastCheckedSelect = checkboxes[checkboxes.length - 1].parentNode.querySelector('select');
         lastCheckedSelect.disabled = false;
+        }
     }
 
-    
+    calculaValorTotal();
 }
 
 function deselecionarCheckbox(checkbox) {
@@ -107,6 +105,7 @@ function deselecionarCheckbox(checkbox) {
         select.disabled = true;
         select.value = "x1";
     });
+    calculaValorTotal();
 }
 
 function salvarPorcao(select) {
@@ -131,6 +130,7 @@ function salvarPorcao(select) {
     });
 
     }
+    calculaValorTotal();
 }  
 
 function fazerPedido(func, f1, f2) {
@@ -350,8 +350,14 @@ function resumirPedido(func,f1,f2, F,P,A,M,S){
     
 }
 function calculaValorTotal(){
+    valortotal = 0; // Reset do valor total
+    // Define a variável com o texto desejado
+    
+
+// Obtém o elemento do botão
+    var botao = document.getElementById("botao_pedido" );
     // Obtém todos os checkboxes marcados
-    var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    var checkedboxes = document.querySelectorAll('input[type="checkbox"]:checked');
     
     var selects = document.querySelectorAll('select');
 
@@ -366,24 +372,32 @@ function calculaValorTotal(){
         }
     });
 
-     if(quantidadeSelectsX2 >= 1 && checkboxes.length > 1){
-        valortotal += ((quantidadeSelectsX2)+(checkboxes.length - 2)) * 5;
+     if(quantidadeSelectsX2 >= 1 && checkedboxes.length > 1){
+        valortotal = 25 + ((quantidadeSelectsX2)+(checkedboxes.length - 2)) * 5;
 
     }
     
     
     // Verifica se o número de checkboxes marcados é maior que 2
-    else if (checkboxes.length > 2 && quantidadeSelectsX2 < 1) {
+    else if (checkedboxes.length > 2 && quantidadeSelectsX2 < 1) {
         // Para cada checkbox marcado acima de 2, adiciona 5 ao valortotal
-        valortotal += (checkboxes.length - 2) * 5;
+        valortotal = 25 + (checkedboxes.length - 2) * 5;
+    }
+    else{
+        valortotal = 25;
     }
     
-    // Verifica se o número de selects com valor x2 é maior que 2
+    
     
     document.getElementById("valorDoPedido").innerHTML = "Valor do seu pedido:"+valortotal;
+
+    var textoVariavel = valortotal;
+    // Define o texto do botão como o conteúdo da variável
+    botao.innerText = "Fazer pedido, valor total:"+" "+textoVariavel;
+
+    //console.log(checkedboxes.length, quantidadeSelectsX2)
     
-    // Exibe o valor total
-    console.log(valortotal, quantidadeSelectsX2, checkboxes.length );
+    
 }
 
 

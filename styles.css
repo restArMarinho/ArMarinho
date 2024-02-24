@@ -99,9 +99,23 @@ main {
     border-radius: 16px 16px 16px 16px;
     background-color: #ffda7de2;
     padding: 10px;
+    
     text-align: center;
     max-height: 1000vh; /* Defina a altura máxima como 100% da altura da janela de visualização */
     max-width: 100%;
+
+}
+.botaopedido{
+    width: 100%;
+    height: 10%;
+    position: fixed; /* Define a posição fixa */
+    bottom: 0%; /* Distância do botão a partir do rodapé */
+    right: 0%; /* Distância do botão a partir da margem direita */
+    z-index: 999; /* Garante que o botão fique acima de outros elementos */
+    border: 3px;
+    border-color: #090909;
+    margin: 0px;
+
 
 }
 
@@ -324,6 +338,19 @@ main {
     .pedidoContainer{
 
         width: 50vw;
+    }
+    .botaopedido{
+        width: 50%;
+        height: 5%;
+        position: fixed; /* Define a posição fixa */
+        bottom: 0%; /* Distância do botão a partir do rodapé */
+        right: 25%; /* Distância do botão a partir da margem direita */
+        z-index: 999; /* Garante que o botão fique acima de outros elementos */
+        border: 3px;
+        border-color: #090909;
+        margin: 0px;
+    
+    
     }
     
     

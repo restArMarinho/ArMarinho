@@ -389,15 +389,15 @@
 </form>
             
         </section>
-        <div class = "botaopedido" style="transform: scale(0.7);">
-            <button  type=" button" onclick="pedido()"><img src="imagens/fazerpedido.jpg" ></button>
-        </div>
+       
+            <button  id = "botao_pedido" class = "botaopedido"  type=" button" onclick="pedido()"> Fazer pedido, valor total:</button>
+        
     </section>
 <!------------------------------------------------------------------------------------------------------------------------>    
 
 <!------------------------------------------------------------------------------------------------------------------------> 
     <section class="pedidoContainer" id="resumo">
-        <button class="homeButtonPedido" type=" button" onclick="voltaParaPedido()"><img src="imagens/voltar.png"></button> 
+        <button class="homeButtonPedido" type=" button" onclick="voltarParaIndex()"><img src="imagens/voltar.png"></button> 
         <img src="imagens/seloicone.webp" alt="">
         <div>
             <h1> Resumo do seu Pedido</h1>
@@ -407,7 +407,7 @@
 
             <h2>Selecione a forma de entrega </h2>
     
-            <!-- Formulário com duas entradas de rádio -->
+            <!-- Formulário entrega -->
             <form class="formulario-resumo">
                 <label>
                     <input type="radio" id = "entrega" name="formadeentrega" value="Entrega"> Entrega.
@@ -503,12 +503,7 @@
 <!------------------------------------------------------------------------------------------------------------------------>    
 
 <!------------------------------------------------------------------------------------------------------------------------> 
-    
-    <footer>
-        <p>Endereço: Rua Tupi, 60, Herrique Jorge, Fortaleza-CE</p>
-        <p>Telefone: (85) 987251440</p>
-        <p>Whatsapp: <a href="outra_pagina.html">Clique aqui</a></p>
-    </footer>
+   
     <script src='pedidoscript.js'></script>
 </body>
 </html>
