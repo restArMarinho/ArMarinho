@@ -54,6 +54,7 @@ function limitarSelecoes(checkbox) {
     var selects = document.querySelectorAll('select[name="' + checkbox.name + '"]');
     var uncheckedCheckboxes = document.querySelectorAll('input[type="checkbox"][name="' + checkbox.name + '"]:not(:checked)');
     var radios = document.querySelectorAll('input[type="radio"][name="' + checkbox.name + '"]:checked');
+    var uncheckedradios = document.querySelectorAll('input[type="radio"][name="' + checkbox.name + '"]:not(:checked)');
     var select = checkbox.parentNode.querySelector('select');
     // Desabilita o select se o checkbox não estiver marcado
     select.disabled = !checkbox.checked;
@@ -71,6 +72,7 @@ function limitarSelecoes(checkbox) {
         selects.forEach(function(select) {
             select.disabled = true;
         });
+
     } else {
         // Se apenas um checkbox estiver marcado, habilita os outros checkboxes não marcados
         uncheckedCheckboxes.forEach(function(uncheckedCheckbox) {
@@ -82,7 +84,14 @@ function limitarSelecoes(checkbox) {
         lastCheckedSelect.disabled = false;
         }
     }
-
+    if(checkboxes.length === 0){
+        // Verifica se há radios e seleciona o primeiro se nenhum checkbox estiver marcado
+        
+        uncheckedradios[0].checked = true; 
+        
+    }
+    //console.log(checkboxes.length, uncheckedradios);
+   
     calculaValorTotal();
 }
 
