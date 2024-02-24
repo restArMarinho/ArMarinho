@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-image: url('imagens/background2.jpg');background-size: cover; background-repeat: repeat-y; background-position: center">
+    <header>
+        <h1>ArMarinho</h1>
+    </header>
+<!------------------------------------------------------------------------------------------------------------------------>    
+
+<!------------------------------------------------------------------------------------------------------------------------> 
+    
+    <section id="conteiner" class="pedidoContainer active">
+        
+        
+        <img src="imagens/seloicone.webp" alt="">
+        
+        <section class="caixaPedido">
+            <h1 id="pedidotitulo">Faça seu pedido</h1>
+            <h3>Pedido mínimo (2 porções) custa 25R$, a cada porção adicionada soma mais 5R$. </h3>
+            
+<!------------------------------------------------ Formulário 1 --------------------------------------------------------->
+
+<!------------------------------------------------ Formulário 1 --------------------------------------------------------->
+            <form id="frutosDoMar" class="formulario-pedido">
+    <h3>Opções de Mariscos</h3>
+    
+    <p>Selecione um Marisco</p>
+    
+    <fieldset id="campopedido1" class="campopedido">
+        <div class="botoes-pedidos">
+            <img class="icone" src="imagens/frutosdomar/polvo.jpg">
+            <label> 
+                <input type="checkbox" name="pedido_prato1" onchange="limitarSelecoes(this)" value="Polvo"> 
+                <select id="numeroPorcoes1" name="pedido_prato1" onchange="salvarPorcao(this)" disabled>
+                    <option value="x1">x1 Porção</option>
+                    <option value="x2">x2 Porções</option>
+                </select><br>
+                Polvo<br>Tentáculos de polvo<br>quantidade 120g
+            </label>
+        </div>
+    </fieldset>
+    
+    <fieldset id="campopedido2" class="campopedido">
+        <div class="botoes-pedidos">
+            <img class="icone" src="imagens/frutosdomar/lula.jpg">
+            <label> 
+                <input type="checkbox" name="pedido_prato1" onchange="limitarSelecoes(this)" value="Lula">
+                <select id="numeroPorcoes2" name="pedido_prato1" onchange="salvarPorcao(this)" disabled>
+                    <option value="x1">x1 Porção</option>
+                    <option value="x2">x2 Porções</option>
+                </select><br>
+                Aneis e lula<br>Quantidade:120
+            </label>
+        </div>
+    </fieldset>
+    
+    <fieldset id="campopedido3" class="campopedido">
+        <div class="botoes-pedidos">
+            <img class="icone" src="imagens/frutosdomar/camarao.jpg">
+            <label>
+                <input type="checkbox" name="pedido_prato1" onchange="limitarSelecoes(this)" value="Camarão">
+                <select id="numeroPorcoes3" name="pedido_prato1" onchange="salvarPorcao(this)" disabled>
+                    <option value="x1">x1 Porção</option>
+                    <option value="x2">x2 Porções</option>
+                </select><br>
+                Camarão alho e óleo<br>Quantidade:120
+            </label>
+        </div>
+    </fieldset>
+    
+    <fieldset id="campopedido4" class="campopedido">
+        <div class="botoes-pedidos">
+            <img class="icone" src="imagens/frutosdomar/arraia.jpg">
+            <label>
+                <input type="checkbox" name="pedido_prato1" onchange="limitarSelecoes(this)" value="Arraia">
+                <select id="numeroPorcoes4" name="pedido_prato1" onchange="salvarPorcao(this)" disabled>
+                    <option value="x1">x1 Porção</option>
+                    <option value="x2">x2 Porções</option>
+                </select><br>
+                Moqueca de arraia<br>Quantidade:120
+            </label>
+        </div>
+    </fieldset>
+    
+    <div class="botoes-pedidos">
+        <img class="icone" src="imagens/naoobrigado.webp">
+        <label>
+            <input type="radio" name="pedido_prato1"  onchange="deselecionarCheckbox(this)" value="zero"> 
+            Não vou querer<br>Mariscos.
+        </label>
+    </div>
+</form>
+<!------------------------------------------------ Formulário 2 --------------------------------------------------------->
+
+<!------------------------------------------------ Formulário 2 --------------------------------------------------------->
+<form id="pescado" class="formulario-pedido">
+    <h3>Opções de Peixe</h3>
+    
+    <p>Selecione um Peixe</p>
+    
+    <fieldset class="campopedido">
+        <div class="botoes-pedidos">
+            <img class="icone" src="imagens/pescados/salmao.jpg">
+            <label class="pedidoLabel">
+                <input type="checkbox" onchange="limitarSelecoes(this)" name="pedido_prato2" value="Salmao"> 
+                <select name="pedido_prato2" onchange="salvarPorcao(this)" disabled>
+                    <option value="x1">x1 Porção</option>
+                    <option value="x2">x2 Porções</option>
+                </select><br>
+                Salmao grelhado<br>quantidade 120g
+            </label>
+        </div>
+    </fieldset>
+    
+    <fieldset class="campopedido">
+        <div class="botoes-pedidos">
+            <img class="icone" src="imagens/pescados/atum.jpg">
+            <label class="pedidoLabel">
+                <input type="checkbox" onchange="limitarSelecoes(this)" name="pedido_prato2" value="Atum"> 
+                <select name="pedido_prato2" onchange="salvarPorcao(this)" disabled>
+                    <option value="x1">x1 Porção</option>
+                    <option value="x2">x2 Porções</option>
+                </select><br>
+                Atum grelhado<br>Quantidade:120
+            </label>
+        </div>
+    </fieldset>
+    
+    <fieldset class="campopedido">
+        <div class="botoes-pedidos">
+            <img class="icone" src="imagens/pescados/robalo.jpg">
+            <label class="pedidoLabel">
+                <input type="checkbox" onchange="limitarSelecoes(this)" name="pedido_prato2" value="Robalo"> 
+                <select name="pedido_prato2" onchange="salvarPorcao(this)" disabled>
+                    <option value="x1">x1 Porção</option>
+                    <option value="x2">x2 Porções</option>
+                </select><br>
+                Robalo grelhado<br>Quantidade:120
+            </label>
+        </div>
+    </fieldset>
+    
+    <fieldset class="campopedido">
+        <div class="botoes-pedidos">
+            <img class="icone" src="imagens/pescados/bonito.jpg">
+            <label class="pedidoLabel">
+                <input type="checkbox" onchange="limitarSelecoes(this)" name="pedido_prato2" value="Bonito"> 
+                <select name="pedido_prato2" onchange="salvarPorcao(this)" disabled>
+                    <option value="x1">x1 Porção</option>
+                    <option value="x2">x2 Porções</option>
+                </select><br>
+                Bonito grelhado<br>Quantidade:120
+            </label>
+        </div>
+    </fieldset>
+    
+    <div class="botoes-pedidos">
+        <img class="icone" src="imagens/naoobrigado.webp">
+        <label>
+            <input type="radio" onchange="deselecionarCheckbox(this)" name="pedido_prato2" value="zero">
+            Não vou querer Peixe.
+        </label>
+    </div>
+</form>
+
+
+<!------------------------------------------------ Formulário 3 --------------------------------------------------------->
+
+<!------------------------------------------------ Formulário 3 --------------------------------------------------------->
+<form id="arroz" class="formulario-pedido">
+    <h3>Opções de arroz </h3>
+    
+    <p>Selecione um tipo de Arroz</p>
+    
+    <fieldset class="campopedido">
+        <div class="botoes-pedidos">
+            <img class="icone" src="imagens/arroz/morango.jpg">
+            <label class="pedidoLabel">
+                <input type="checkbox" onchange="limitarSelecoes(this)" name="pedido_prato3" value="Morango"> 
+                <select name="pedido_prato3" onchange="salvarPorcao(this)" disabled>
+                    <option value="x1">x1 Porção</option>
+                    <option value="x2">x2 Porções</option>
+                </select><br>
+                Arroz de Morango<br>quantidade 120g
+            </label>
+        </div>
+    </fieldset>
+    
+    <fieldset class="campopedido">
+        <div class="botoes-pedidos">
+            <img class="icone" src="imagens/arroz/grega.jpg">
+            <label class="pedidoLabel">
+                <input type="checkbox" onchange="limitarSelecoes(this)" name="pedido_prato3" value="A Grega"> 
+                <select name="pedido_prato3" onchange="salvarPorcao(this)" disabled>
+                    <option value="x1">x1 Porção</option>
+                    <option value="x2">x2 Porções</option>
+                </select><br>
+                Arroz a Grega<br>Quantidade:120
+            </label>
+        </div>
+    </fieldset>
+    
+    <fieldset class="campopedido">
+        <div class="botoes-pedidos">
+            <img class="icone" src="imagens/arroz/crocante.jpg">
+            <label class="pedidoLabel">
+                <input type="checkbox" onchange="limitarSelecoes(this)" name="pedido_prato3" value="Crocante"> 
+                <select name="pedido_prato3" onchange="salvarPorcao(this)" disabled>
+                    <option value="x1">x1 Porção</option>
+                    <option value="x2">x2 Porções</option>
+                </select><br>
+                Arroz Crocante <br>Quantidade:120
+            </label>
+        </div>
+    </fieldset>
+    
+    <fieldset class="campopedido">
+        <div class="botoes-pedidos">
+            <img class="icone" src="imagens/arroz/branco.jpg">
+            <label class="pedidoLabel">
+                <input type="checkbox" onchange="limitarSelecoes(this)" name="pedido_prato3" value="Branco"> 
+                <select name="pedido_prato3" onchange="salvarPorcao(this)" disabled>
+                    <option value="x1">x1 Porção</option>
+                    <option value="x2">x2 Porções</option>
+                </select><br>
+                Arroz Branco<br>Quantidade:120
+            </label>
+        </div>
+    </fieldset>
+    
+    <div class="botoes-pedidos">
+        <img class="icone" src="imagens/naoobrigado.webp">
+        <label>
+            <input type="radio" onchange="deselecionarCheckbox(this)" name="pedido_prato3" value="zero">
+            Não vou querer Arroz.
+        </label>
+    </div>
+</form>
+
+<!------------------------------------------------ Formulário 4 --------------------------------------------------------->
+
+<!------------------------------------------------ Formulário 4 --------------------------------------------------------->
+<form id="massas" class="formulario-pedido">
+    <h3>Opções de Massas </h3>
+    
+    <p>Selecione uma Massa</p>
+    
+    <fieldset class="campopedido">
+        <div class="botoes-pedidos">
+            <img class="icone" src="imagens/massas/alhoeoleo.jpg">
+            <label class="pedidoLabel">
+                <input type="checkbox" onchange="limitarSelecoes(this)" name="pedido_prato4" value="Alho e óleo"> 
+                <select name="pedido_prato4"onchange="salvarPorcao(this)" disabled>
+                    <option value="x1">x1 Porção</option>
+                    <option value="x2">x2 Porções</option>
+                </select><br>
+                Alho e óleo <br>quantidade 120g
+            </label>
+        </div>
+    </fieldset>
+    
+    <fieldset class="campopedido">
+        <div class="botoes-pedidos">
+            <img class="icone" src="imagens/massas/molhobranco.jpg">
+            <label class="pedidoLabel">
+                <input type="checkbox" onchange="limitarSelecoes(this)" name="pedido_prato4" value="Molho Branco"> 
+                <select name="pedido_prato4" onchange="salvarPorcao(this)" disabled>
+                    <option value="x1">x1 Porção</option>
+                    <option value="x2">x2 Porções</option>
+                </select><br>
+                Molho Branco<br>Quantidade:120
+            </label>
+        </div>
+    </fieldset>
+    
+    <fieldset class="campopedido">
+        <div class="botoes-pedidos">
+            <img class="icone" src="imagens/massas/tomate.jpg">
+            <label class="pedidoLabel">
+                <input type="checkbox" onchange="limitarSelecoes(this)" name="pedido_prato4" value="Molho Vermelho"> 
+                <select name="pedido_prato4" onchange="salvarPorcao(this)" disabled>
+                    <option value="x1">x1 Porção</option>
+                    <option value="x2">x2 Porções</option>
+                </select><br>
+                Molho Vermelho<br>Quantidade:120
+            </label>
+        </div>
+    </fieldset>
+    
+    <fieldset class="campopedido">
+        <div class="botoes-pedidos">
+            <img class="icone" src="imagens/massas/pesto.jpg">
+            <label class="pedidoLabel">
+                <input type="checkbox" onchange="limitarSelecoes(this)" name="pedido_prato4" value="Ao pesto"> 
+                <select name="pedido_prato4" onchange="salvarPorcao(this)" disabled>
+                    <option value="x1">x1 Porção</option>
+                    <option value="x2">x2 Porções</option>
+                </select><br>
+                Pesto de Ervas<br>Quantidade:120
+            </label>
+        </div>
+    </fieldset>
+    
+    <div class="botoes-pedidos">
+        <img class="icone" src="imagens/naoobrigado.webp">
+        <label>
+            <input type="radio" onchange="deselecionarCheckbox(this)" name="pedido_prato4" value="zero">
+            Não vou querer Massa.
+        </label>
+    </div>
+</form>
+
+<!------------------------------------------------ Formulário 5 --------------------------------------------------------->
+
+<!------------------------------------------------ Formulário 5 --------------------------------------------------------->
+<form id="saladas" class="formulario-pedido">
+    <h3>Opções de Saladas</h3>
+    
+    <p>Selecione uma Salada</p>
+    
+    <fieldset class="campopedido">
+        <div class="botoes-pedidos">
+            <img class="icone" src="imagens/saladas/berinjela.jpg">
+            <label>
+                <input type="checkbox" onchange="limitarSelecoes(this)" name="pedido_prato5" value="Confitado de berinjela"> 
+                <select name="pedido_prato5" onchange="salvarPorcao(this)" disabled>
+                    <option value="x1">x1 Porção</option>
+                    <option value="x2">x2 Porções</option>
+                </select><br>
+                Confitado de Berinjela<br>quantidade 120g
+            </label>
+        </div>
+    </fieldset>
+    
+    <fieldset class="campopedido">
+        <div class="botoes-pedidos">
+            <img class="icone" src="imagens/saladas/roxa.jpg">
+            <label>
+                <input type="checkbox" onchange="limitarSelecoes(this)" name="pedido_prato5" value="Salada roxa"> 
+                <select name="pedido_prato5" onchange="salvarPorcao(this)" disabled>
+                    <option value="x1">x1 Porção</option>
+                    <option value="x2">x2 Porções</option>
+                </select><br>
+                Salada Roxa<br>Quantidade:120
+            </label>
+        </div>
+    </fieldset>
+    
+    <fieldset class="campopedido">
+        <div class="botoes-pedidos">
+            <img class="icone" src="imagens/saladas/tomate.jpg">
+            <label>
+                <input type="checkbox" onchange="limitarSelecoes(this)" name="pedido_prato5" value="Confitado de tomate"> 
+                <select name="pedido_prato5" onchange="salvarPorcao(this)" disabled>
+                    <option value="x1">x1 Porção</option>
+                    <option value="x2">x2 Porções</option>
+                </select><br>
+                Confitado de Tomates<br>Quantidade:120
+            </label>
+        </div>
+    </fieldset>
+    
+    <fieldset class="campopedido">
+        <div class="botoes-pedidos">
+            <img class="icone" src="imagens/saladas/pesto.jpg">
+            <label>
+                <input type="checkbox" onchange="limitarSelecoes(this)" name="pedido_prato5" value="salada verde ao pesto"> 
+                <select name="pedido_prato5" onchange="salvarPorcao(this)" disabled>
+                    <option value="x1">x1 Porção</option>
+                    <option value="x2">x2 Porções</option>
+                </select><br>
+                Salada Verde<br> com molho de pesto<br>Quantidade:120
+            </label>
+        </div>
+    </fieldset>
+    
+    <div class="botoes-pedidos">
+        <img class="icone" src="imagens/naoobrigado.webp">
+        <label>
+            <input type="radio" onchange="deselecionarCheckbox(this)" name="pedido_prato5" value="zero">
+            Não vou querer Salada.
+        </label>
+    </div>
+</form>
+            
+        </section>
+        <div class = "botaopedido" style="transform: scale(0.7);">
+            <button  type=" button" onclick="pedido()"><img src="imagens/fazerpedido.jpg" ></button>
+        </div>
+    </section>
+<!------------------------------------------------------------------------------------------------------------------------>    
+
+<!------------------------------------------------------------------------------------------------------------------------> 
+    <section class="pedidoContainer" id="resumo">
+        <button class="homeButtonPedido" type=" button" onclick="voltaParaPedido()"><img src="imagens/voltar.png"></button> 
+        <img src="imagens/seloicone.webp" alt="">
+        <div>
+            <h1> Resumo do seu Pedido</h1>
+
+            <p id = "resumoPedido"></p>
+            
+
+            <h2>Selecione a forma de entrega </h2>
+    
+            <!-- Formulário com duas entradas de rádio -->
+            <form class="formulario-resumo">
+                <label>
+                    <input type="radio" id = "entrega" name="formadeentrega" value="Entrega"> Entrega.
+                </label>
+              
+                <label>
+                    <input type="radio" id = "retirada" name="formadeentrega" value="Retirada"> Retirada
+                </label>
+            </form>
+
+            <form id="dadosCliente" class="formulario-resumo">
+                <fieldset>
+                    <legend>Nome e Telefone</legend>
+                    <div>
+                        <label for="nome">Nome:</label>
+                        <input id="nome" type="text" required>
+                    </div>
+                    <div>
+                        <label for="telefone">Telefone para Contato:</label>
+                        <input id="telefone" type="text" placeholder="(XX) XXXX-XXXX"pattern="\([0-9]{2}\) [0-9]{4}-[0-9]{4}"  required>
+                    </div>
+                </fieldset>
+            
+                <fieldset>
+                    <legend>Endereço</legend>
+                    <div>
+                        <label for="rua">Rua:</label>
+                        <input id="rua" type="text" required>
+                    </div>
+                    <div>
+                        <label for="ruanumero">Número:</label>
+                        <input id="ruanumero" type="text" required>
+                    </div>
+                    <div>
+                        <label for="bairro">Bairro:</label>
+                        <input id="bairro" type="text" required>
+                    </div>
+                    <div>
+                        <label for="cep">CEP:</label>
+                        <input id="cep" type="text" required value="Sem CEP">
+                    </div>
+                    
+                    <div>
+                        <label for="complemento">Complemento:</label>
+                        <input id="complemento" type="text" value="Sem Complemento">
+                    </div>
+                    <div>
+                        <label for="referencia">Ponto de Referência:</label>
+                        <input id="referencia" type="text" value="Sem Referência">
+                    </div>
+                </fieldset>
+            </form>
+            
+
+            <h2>Selecione a forma de pagamento </h2>
+            <!-- Formulário com três entradas de rádio -->
+            <form class="formulario-resumo">
+                
+                <label> 
+                    <input type="radio" name="formadepagamento" value="Pix" > Pix     
+                </label>
+                <label>
+                    <input type="radio" name="formadepagamento" value="Débito"> Cartão de Débito
+                </label>
+                <label>
+                    <input type="radio" name="formadepagamento" value="Crédito"> Cartão de Crédito
+                </label>
+            </form>
+            <fieldset>
+                <legend>Observações:</legend>
+            <form class="formulario-resumo">
+                <div>
+                    
+                    <input id="observacoes" type="text" placeholder="Exemplo: não colocar pimenta, colocar pouco sal, ect">
+                </div>
+            </fieldset>    
+            </form>
+            valor do seu pedido:<p id = "valorDoPedido"></p>
+            <p> Ao confirmar os dados do seu pedido você será redirecionado para o WhatsApp onde continuaremos por lá! Obrigado e até a próxima. </p>
+            <!-- Botão -->
+            <button type="button" onclick="openPopup()">Confirmar Pedido</button>
+            
+        </div>
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup()">&times;</span>
+                <h2>Confirme seu pedido</h2>
+                <p>Tudo certo? Agora vamos continuar pelo WhatsApp</p>
+                <button onclick="confirmaPedido()">Confirmar pedido</button>
+            </div>
+        </div>
+    </section>
+<!------------------------------------------------------------------------------------------------------------------------>    
+
+<!------------------------------------------------------------------------------------------------------------------------> 
+    
+    <footer>
+        <p>Endereço: Rua Tupi, 60, Herrique Jorge, Fortaleza-CE</p>
+        <p>Telefone: (85) 987251440</p>
+        <p>Whatsapp: <a href="outra_pagina.html">Clique aqui</a></p>
+    </footer>
+    <script src='pedidoscript.js'></script>
+</body>
+</html>

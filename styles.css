@@ -1,0 +1,331 @@
+body {
+    height: 100%;
+    line-height: 1.5;
+    background-color: hsl(0, 0%, 100%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:100vh;
+    
+}
+button {
+     
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+   
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    flex-direction: column
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #696868;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+   
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #fff;
+}
+
+header {
+    margin-bottom: 3px;
+    border: 1px solid black;
+    background-color: #f0ab09;
+    color: #fff;
+    text-align: center;
+    padding: 10px 10px;
+    width: 100%; /* Largura ajustada para ocupar toda a largura do contêiner pai */
+}
+header h1 {
+    margin: 0;
+}
+
+main {
+    border: 3px solid black;
+    background-color: #ffda7de9;
+    padding: 20px;
+    text-align: center;
+    height: auto; /* Ajustado para a altura necessária, não uma altura fixa */
+    border-radius: 3px;
+    min-width: 50%;
+    max-width: 100%; /* Largura ajustada para ocupar toda a largura do contêiner pai */
+}
+/**********************************************************************************************************************************/
+
+/**********************************************************************************************************************************/
+.botaomenu{
+    width: 20%;
+    height: 20vh;
+}    
+.barralateralesquerda {
+    /*border: 1px solid #090909; /* Adiciona uma borda sólida de 1px com a cor #090909 */
+    position: absolute;
+    left: 0%;
+    top: 11%;
+    height: 100%;
+    width: 17%; /* Defina a largura máxima desejada */
+    
+}
+.barralateraldireita {
+    /*border: 1px solid #090909; /* Adiciona uma borda sólida de 1px com a cor #090909 */
+    position: absolute;
+    left: 83%;
+    top: 11%;
+    height: 100%;
+    max-height: 1000vh;
+    width: 17%; /* Defina a largura máxima desejada */
+    padding-bottom: 10px;
+}
+.pedidoContainer{
+    display: none;
+    border: 3px solid black;
+    background-color: #ddd;
+    border-radius: 16px 16px 16px 16px;
+    background-color: #ffda7de2;
+    padding: 10px;
+    text-align: center;
+    max-height: 1000vh; /* Defina a altura máxima como 100% da altura da janela de visualização */
+    max-width: 100%;
+
+}
+
+.pedidoContainer.active{
+    display: block;
+}
+.Janela{
+    display: none;
+    
+}
+.Janela.active {
+    
+    display: block;
+}
+
+.descricao {
+    margin-bottom: 20px;
+}
+
+.botoes-index {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+   
+}
+.botoes-pedidos {
+    margin: 2px;
+   
+    border-color: #090909;
+    border: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+   
+}
+
+
+.botoes-opcoes {
+    
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+
+}
+.formulario-pedido label {
+    display: block;
+    padding-left: 0px; /* Adiciona espaço à esquerda para a imagem */
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/* Estilize as imagens */
+.formulario-pedido label img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 32px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    margin-top: 4px; /* Ajuste conforme necessário para centralizar verticalmente */
+}
+.formulario-pedido input[type="radio"] + img {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 3px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+/* Estilize a aparência do input de seleção quando estiver selecionado */
+.formulario-pedido input[type="radio"]:checked + img {
+    border-color: #007bff;
+}
+
+.formulario-resumo{
+    text-align: center;
+}
+.formulario-resumo label {
+    display: block;
+    padding-left: 0px; /* Adiciona espaço à esquerda para a imagem */
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/* Estilize as imagens */
+
+.formulario-resumo input {
+    
+    border: 1px solid #141414;
+    border-radius: 5px;
+    padding: 3px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.icone{
+    padding: 0px;
+    transform: scale(0.9); 
+    border: 3px;
+    border-color: #090909;
+}
+.homeButtonPedido{
+    background-color: #ddd;
+    padding: 0px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+}
+.homeButton {
+    background-color: #ddd;
+    padding: 0px;
+    margin-bottom: 0px;
+    
+}
+.fazerpedido{
+    
+    
+    padding: 0px;
+    margin-bottom: 0px;
+    
+}
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9999;
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.campopedido{
+    border-top: #ccc;
+    border-left: #ccc;
+    border-right: #ccc;
+    padding: 0px;
+    margin: 0px;
+    
+}
+
+/**********************************************************************************************************************************/
+
+/**********************************************************************************************************************************/
+#numeroPorcoes{
+    height: 20px;
+}
+#menu{
+    display: none;
+}
+#cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Isso centralizará verticalmente os elementos */
+}
+#indextitulo{
+    color: rgb(6, 6, 6);
+    /*font-family: "Apple Chancery, cursive"; /* Define a fonte para Arial ou uma fonte sans-serif genérica */
+    font-size: 30px; /* Define o tamanho da fonte como 18 pixels */
+    line-height: 1.5; /* Define a altura da linha para 1.5 vezes o tamanho da fonte para melhor legibilidade */
+    margin-bottom: 20px; 
+    font-weight: 900;
+}
+#pedidotitulo{
+    font-size: 40px; /* Define o tamanho da fonte como 18 pixels */
+    line-height: 1.5; /* Define a altura da linha para 1.5 vezes o tamanho da fonte para melhor legibilidade */
+    margin-bottom: 20px; 
+    font-weight: 900;
+}
+#indextext{
+    text-align: left;
+    color: rgb(0, 0, 0);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px; /* Define o tamanho da fonte como 18 pixels */
+    line-height: 1.5; /* Define a altura da linha para 1.5 vezes o tamanho da fonte para melhor legibilidade */
+    margin-bottom: 20px; 
+    font-weight:900;
+}
+
+#dadosCliente{
+    display: none;
+}
+
+
+#observacoes{
+    width: 100%;
+    height: 10vh;
+}
+/**********************************************************************************************************************************/
+
+/**********************************************************************************************************************************/
+@media (max-width: 500px) {
+    main{
+        min-width: 100%;
+        
+    }
+    
+    
+}
+@media (min-width: 600px) {
+    
+    .pedidoContainer{
+
+        width: 50vw;
+    }
+    
+    
+}
+
