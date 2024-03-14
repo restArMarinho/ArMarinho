@@ -464,14 +464,14 @@ function enviarPedido(f1, f2, F,P,A,M,S){
         var complemento = document.getElementById("complemento").value;
         var referencia = document.getElementById("referencia").value;
             if(nome !==""&&telefone!==""&&rua!==""&&numero!==""&&bairro!==""){
-            window.location.href = `https://wa.me/5585996951097/?text=PEDIDO:%0A%0A${F}%20%0A${P}%20%0A${A}%20%0A${M}%20%0A${S}%20%0AOBSERVAÇÕES:${observacoes}%0A****************%0APAGAMENTO:%20${formaDePagamento}.%0A****************%0AENTREGA:%20ENTREGA%0A%0ANOME:%20${nome}%0ATELEFONE:%20${telefone}%0ARUA:%20${rua}%0ANUMERO:%20${numero}%0ABAIRRO:%20${bairro}%0ACOMPLEMENTO:%20${complemento}%0APONTO%20DE%20REFERÊNCIA:%20${referencia}%0A****************%0AVALOR_TOTAL:%20${valortotal}%20REAIS`  
+            window.location.href = `https://wa.me/5585996951097/?text=PEDIDO:%0A%0A${F}%20%0A${P}%20%0A${A}%20%0A${M}%20%0A${S}%20%0AOBSERVAÇÕES:${observacoes}%0A****************%0APAGAMENTO:%20${formaDePagamento}.%0A****************%0AENTREGA:%20ENTREGA%0A%0ANOME:%20${nome}%0ATELEFONE:%20${telefone}%0ARUA:%20${rua}%0ANUMERO:%20${numero}%0ABAIRRO:%20${bairro}%0ACOMPLEMENTO:%20${complemento}%0APONTO%20DE%20REFERÊNCIA:%20${referencia}%0A****************%0AVALOR_TOTAL:%20${valortotal}%20`  
             }
             else{
                 alert("Preencher todos os dados para entrega.")
             }
         }
         else{
-    window.location.href = `https://wa.me/5585996951097/?text=PEDIDO:%0A%0A${F}%20%0A${P}%20%0A${A}%20%0A${M}%20%0A${S}%20%0AOBSERVAÇÕES:${observacoes}%0A**************%0APAGAMENTO:%20${formaDePagamento}%0A****************%0AENTREGA:%20RETIRADA.%0A****************%0AVALOR_TOTAL:%20${valortotal}%20REAIS`
+    window.location.href = `https://wa.me/5585996951097/?text=PEDIDO:%0A%0A${F}%20%0A${P}%20%0A${A}%20%0A${M}%20%0A${S}%20%0AOBSERVAÇÕES:${observacoes}%0A**************%0APAGAMENTO:%20${formaDePagamento}%0A****************%0AENTREGA:%20RETIRADA.%0A****************%0AVALOR_TOTAL:%20${valortotal}`
     
         }
     }
