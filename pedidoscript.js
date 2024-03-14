@@ -426,7 +426,7 @@ opcoes.forEach(function(opcao) {
         }
             document.getElementById("dadosCliente").style.display = "block";
             document.getElementById("dados").style.display = "block";
-            document.getElementById("entrega").style.display = "block";
+            document.getElementById("endereco").style.display = "block";
             document.getElementById("valorDoPedido").innerHTML = "Valor do seu pedido:"+ valortotal;
             formaDeEntrega = "Entrega";
         } else {
@@ -439,6 +439,7 @@ opcoes.forEach(function(opcao) {
             }
             document.getElementById("dadosCliente").style.display = "block";
             document.getElementById("dados").style.display = "block";
+            document.getElementById("endereco").style.display = "none";
             document.getElementById("valorDoPedido").innerHTML = "Valor do seu pedido:"+ valortotal;
             formaDeEntrega = "Retirada";
         }
